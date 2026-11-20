@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Stuart McCarthy Chiropractic Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Concept redesign: keeps the clinic's indigo, sharpens hierarchy, booking-first on mobile. Single theme by choice. */
+:root{
+  --ink:#16182e; --muted:#555a75; --bg:#ffffff; --soft:#f3f3fb; --brand:#4444b9; --brand-dark:#2f2f8f; --accent:#ffb347; --line:#e3e3f0;
+  --display:"Barlow", "Arial Narrow", sans-serif; --body:"Source Sans 3", Arial, sans-serif; color-scheme:light;
+}
+*{box-sizing:border-box}html,body{margin:0}
+body{font:17px/1.6 var(--body);color:var(--ink);background:var(--bg)}
+a{color:inherit}
+.concept{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:8px 16px}
+.concept b{color:var(--accent)}
+header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.nav{display:flex;align-items:center;gap:16px;height:64px}
+.logo{font:700 20px/1.1 var(--display);letter-spacing:-.2px}
+.logo span{display:block;font:600 12px var(--body);color:var(--muted);letter-spacing:.4px;text-transform:uppercase}
+.nav .sp{flex:1}
+.nav nav{display:none;gap:22px;font-weight:600;font-size:15px}
+.nav nav a{text-decoration:none;color:var(--muted)}
+@media(min-width:860px){.nav nav{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px var(--display);padding:13px 22px;border-radius:10px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.ghost{border-color:var(--brand);color:var(--brand);background:#fff}
+.btn.small{padding:8px 14px;font-size:14px}
+.hero{background:linear-gradient(160deg,var(--soft),#fff 60%);padding:48px 0 56px}
+.hero-grid{display:grid;gap:32px;align-items:center}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.2fr .8fr}}
+.eyebrow{font:600 13px var(--body);text-transform:uppercase;letter-spacing:.8px;color:var(--brand)}
+h1{font:700 clamp(34px,6vw,54px)/1.05 var(--display);margin:10px 0 16px;letter-spacing:-.8px;text-wrap:balance}
+.lead{font-size:19px;color:var(--muted);max-width:34em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 18px}
+.trust{display:flex;flex-wrap:wrap;gap:18px;font-size:14px;color:var(--muted)}
+.trust b{color:var(--ink)}
+.stars{color:#f5a623;letter-spacing:1px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 10px 30px rgba(40,40,120,.08)}
+.card h3{font:700 20px var(--display);margin:0 0 6px}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.slot{border:1px solid var(--line);border-radius:8px;padding:8px 4px;text-align:center;font-size:14px;font-weight:600}
+.slot small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+section{padding:56px 0}
+h2{font:700 clamp(26px,4vw,36px)/1.15 var(--display);margin:0 0 12px;letter-spacing:-.4px;text-wrap:balance}
+.sub{color:var(--muted);max-width:40em;margin:0 0 28px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.cond{background:var(--soft);border-radius:12px;padding:18px}
+.cond h3{font:700 18px var(--display);margin:0 0 4px}
+.cond p{margin:0;font-size:15px;color:var(--muted)}
+.about{display:grid;gap:28px}
+@media(min-width:860px){.about{grid-template-columns:.8fr 1.2fr;align-items:center}}
+.portrait{aspect-ratio:4/5;border-radius:18px;background:linear-gradient(150deg,var(--brand),var(--brand-dark));color:#fff;display:flex;align-items:flex-end;padding:22px;font:600 15px var(--body)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.fact{border-left:3px solid var(--brand);padding-left:10px;font-size:14px;color:var(--muted)}
+.fact b{display:block;font:700 22px var(--display);color:var(--ink)}
+.steps{counter-reset:s;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.step{border:1px solid var(--line);border-radius:12px;padding:18px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;font:700 15px var(--display);margin-bottom:10px}
+.step h3{font:700 18px var(--display);margin:0 0 4px}.step p{margin:0;font-size:15px;color:var(--muted)}
+blockquote{margin:0;background:var(--ink);color:#fff;border-radius:18px;padding:30px;font-size:20px;line-height:1.5}
+blockquote cite{display:block;margin-top:12px;font:600 14px var(--body);color:var(--accent);font-style:normal}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{font:600 18px var(--display);cursor:pointer}
+details p{color:var(--muted);margin:8px 0 0}
+.band{background:var(--brand);color:#fff;border-radius:20px;padding:34px;display:grid;gap:18px}
+@media(min-width:860px){.band{grid-template-columns:1fr auto;align-items:center}}
+.band h2{color:#fff}.band p{margin:0;opacity:.9}
+.band .btn.primary{background:#fff;color:var(--brand)}
+.band .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+footer{padding:34px 0 90px;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
+.mbar{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px;background:#fff;border-top:1px solid var(--line);z-index:6}
+@media(min-width:860px){.mbar{display:none}footer{padding-bottom:34px}}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="concept">Concept redesign prepared by <b>GC</b> for Stuart McCarthy Chiropractic. Not a live website.</div>
+<header><div class="wrap nav">
+  <div class="logo">Stuart McCarthy<span>Chiropractic · Jesmond</span></div>
+  <div class="sp"></div>
+  <nav><a href="#conditions">Conditions</a><a href="#about">About Stuart</a><a href="#first-visit">First visit</a><a href="#faq">FAQ</a></nav>
+  <a class="btn primary small" href="#book">Book online</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <div class="eyebrow">Chiropractor in Jesmond, Newcastle</div>
+    <h1>Back and neck pain treated at the root, not just eased for a day.</h1>
+    <p class="lead">Gentle, hands-on chiropractic with a plan built around your injury and your life. McTimoney trained, with appointments you can book online in under a minute.</p>
+    <div class="ctas"><a class="btn primary" href="#book">Book your first appointment</a><a class="btn ghost" href="#book">Call 07434 240652</a></div>
+    <div class="trust"><span><span class="stars">★★★★★</span> <b>5.0</b> from 71 Google reviews</span><span><b>Thousands</b> of patients treated</span><span><b>1 Osborne Rd</b>, Jesmond</span></div>
+  </div>
+  <div class="card" id="book">
+    <h3>Next available appointments</h3>
+    <div style="color:var(--muted);font-size:15px">Live times from your booking system</div>
+    <div class="slots"><div class="slot">Mon<small>9:30</small></div><div class="slot">Tue<small>17:15</small></div><div class="slot">Thu<small>12:00</small></div></div>
+    <a class="btn primary" style="width:100%" href="#book">See all times</a>
+    <p style="font-size:13px;color:var(--muted);margin:10px 0 0">Connects to your existing PracticeHub diary. No new software.</p>
+  </div>
+</div></section>
+
+<section id="conditions"><div class="wrap">
+  <h2>What patients come to Stuart for</h2>
+  <p class="sub">From national powerlifters to people in their 90s. If you have a spine, there is usually something we can do.</p>
+  <div class="grid">
+    <div class="cond"><h3>Lower back pain</h3><p>Stiffness, sciatica and pain that keeps coming back.</p></div>
+    <div class="cond"><h3>Neck and shoulder pain</h3><p>Desk posture, tension headaches and restricted movement.</p></div>
+    <div class="cond"><h3>Sports injuries</h3><p>Get back to training and stay there with maintenance care.</p></div>
+    <div class="cond"><h3>Headaches</h3><p>Tension and cervicogenic headaches linked to the neck.</p></div>
+  </div>
+</div></section>
+
+<section id="about" style="background:var(--soft)"><div class="wrap about">
+  <div class="portrait">Photo of Stuart in clinic</div>
+  <div>
+    <div class="eyebrow">Meet your chiropractor</div>
+    <h2>Stuart got into chiropractic the same way most patients do: an injury nothing else fixed.</h2>
+    <p>Raised on the Isle of Wight, Stuart picked up a football injury at sixteen that physio and rest couldn't shift. A short course of chiropractic had him back playing within weeks. He trained at the McTimoney College of Chiropractic and has since treated patients across three countries.</p>
+    <p>Every plan is tailored to you, and he explains what he's doing and why, in plain English.</p>
+    <div class="facts"><div class="fact"><b>5.0★</b>71 reviews</div><div class="fact"><b>3</b>techniques: Diversified, McTimoney, SOT</div><div class="fact"><b>3</b>countries practised</div></div>
+  </div>
+</div></section>
+
+<section id="first-visit"><div class="wrap">
+  <h2>Your first visit</h2>
+  <p class="sub">No surprises. You'll know what's wrong and what the plan is before any treatment starts.</p>
+  <div class="steps">
+    <div class="step"><h3>Book online</h3><p>Pick a time that suits you. Evening slots available.</p></div>
+    <div class="step"><h3>Assessment</h3><p>History, movement tests and a clear explanation of the cause.</p></div>
+    <div class="step"><h3>Treatment and plan</h3><p>Gentle adjustment, plus a plan that fits your goals and budget.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <blockquote>"After only one or two sessions with Stuart, my neck problem, which had affected every minute of my life for the last couple of years, has now disappeared."<cite>Sam B, patient review</cite></blockquote>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap" style="max-width:780px">
+  <h2>Questions people ask</h2>
+  <details><summary>Who is chiropractic for?</summary><p>Stuart has treated patients from their first ten years of life to their 90s. Each treatment is adjusted to the person in front of him.</p></details>
+  <details><summary>Does it hurt?</summary><p>Techniques like McTimoney are very gentle. Stuart will always explain each step and adapt to your comfort.</p></details>
+  <details><summary>How many sessions will I need?</summary><p>Many patients feel a difference in one or two visits. You'll get an honest estimate at your first appointment.</p></details>
+  <details><summary>Where is the clinic?</summary><p>1 Osborne Road, Jesmond, Newcastle upon Tyne.</p></details>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="band"><div><h2>Ready to sort it out properly?</h2><p>Book online in under a minute, or call Stuart directly.</p></div>
+  <div class="ctas" style="margin:0"><a class="btn primary" href="#book">Book online</a><a class="btn ghost" href="#book">07434 240652</a></div></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">Stuart McCarthy Chiropractic · 1 Osborne Road, Jesmond, Newcastle upon Tyne · 07434 240652<br>Concept page by GC. Content adapted from the clinic's current website for illustration.</div></footer>
+<div class="mbar"><a class="btn primary" href="#book">Book online</a><a class="btn ghost" href="#book">Call</a></div>
+</body>
+</html>
